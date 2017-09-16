@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" type="image/ico" href="img/favicon.ico">
 
-  <head>
+<head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="FM inzynieria">
+    <meta name="description" content="FM inżynieria">
     <meta name="author" content="Filip Lodej">
 
     <title>FM inżynieria</title>
@@ -15,8 +16,10 @@
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -24,244 +27,490 @@
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
 
-  </head>
+</head>
 
-  <body id="page-top">
+<body id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <center><img src="/img/logo.png" id="mainLogo" height="100"/></center>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <center><img src="/img/logo.png" id="mainLogo" height="100" href="#about"/></center>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#odbiory">Odbiory mieszkań i domów</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#services">Usługi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#portfolio">Galeria</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#guestbook">Księga gości</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
-
-    <header class="masthead">
-      <div class="header-content">
-        <div class="header-content-inner">
-          <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
-          <hr>
-          <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-        </div>
-      </div>
-    </header>
-
-    <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
-            <hr class="light">
-            <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">At Your Service</h2>
-            <hr class="primary">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-              <h3>Sturdy Templates</h3>
-              <p class="text-muted">Our templates are updated regularly so they don't break.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-              <h3>Ready to Ship</h3>
-              <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-              <h3>Up to Date</h3>
-              <p class="text-muted">We update dependencies to keep things fresh.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-              <h3>Made with Love</h3>
-              <p class="text-muted">You have to make your websites with love these days!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-0" id="portfolio">
-      <div class="container-fluid">
-        <div class="row no-gutter popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="call-to-action bg-dark">
-      <div class="container text-center">
-        <h2>Free Download at Start Bootstrap!</h2>
-        <a class="btn btn-default btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
-      </div>
     </div>
+</nav>
 
-    <section id="contact">
-      <div class="container">
+<header class="masthead" id="about">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading">Nasza firma twoim partnerem w budownictwie mieszkaniowym</h1>
+            <hr>
+            <p>Od lat współpracujemy z wiodącymi inwestorami i firmami w sektorze budowlanym świadcząc usługi doradcze
+                w ramach prowadzonych prac projektowych, wykonawczych i kosztorysowych. Jesteśmy również otwarci na
+                współpracę z klientem indywidualnym w zakresie projektów, nadzorów inwestycji oraz odbiorów mieszkań i
+                domów. Zakres naszej działalności obejmuje województwa: dolnośląskie, śląskie i opolskie. Siedziba firmy
+                znajduję się we Wrocławiu. Zapraszamy do współpracy!</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Więcej o nas</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-primary" id="odbiory">
+    <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="primary">
-            <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-          </div>
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading text-white">Kupiłeś dom lub mieszkanie?<br>
+                    <hr class="light">
+                    Potrzebujesz pomocy przy odbiorze stanu technicznego?<br>
+                    <hr class="light">
+                    Dobrze trafiłeś!
+                </h2>
+                <hr class="light">
+                <p class="text-faded">Chcesz by było twoje nowe mieszkanie było wolne od wad, niedoróbek i ukrytych
+                    usterek? Skontaktuj się z nami! Specjalizujemy się w profesjonalnych odbiorach budynków i mieszkań
+                    by Twoje lokum było zgodne ze
+                    standardem wykonania zamieszczonym w ofercie dewelopera lub sprzedawcy. Nasze odbiory wykonywane są
+                    w oparciu o obowiązujące normy budowlane z naciskiem na Polskie
+                    Normy.</p>
+                <a class="btn btn-default btn-xl js-scroll-trigger" data-toggle="modal"
+                   data-target="#odbiorymodal">Więcej o odbiorach </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Usługi</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box" data-toggle="modal"
+                     data-target="#nadzormodal">
+                    <i class="fa fa-4x fa-user-circle-o text-primary sr-icons" data-toggle="modal"
+                       data-target="#nadzormodal"></i>
+                    <h3>Nadzór inwestorski</h3>
+                    <p class="text-muted">Nasza firma świadczy usługi w zakresie prowadzenia nadzorów
+                        inwestorskich zlecanych bezpośrednio przez dewelopera lub klienta fizycznego.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box" data-toggle="modal"
+                     data-target="#odbiorymodal" data-href="#services">
+                    <i class="fa fa-4x fa-search text-primary sr-icons"></i>
+                    <h3>Odbiory mieszkań i domów</h3>
+                    <p class="text-muted">Specjalizujemy się w profesjonalnych odbiorach by Twoje lokum było zgodne ze
+                        standardem wykonania zamieszczonym w ofercie dewelopera lub sprzedawcy.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box" data-toggle="modal"
+                     data-target="#termomodal">
+                    <i class="fa fa-4x fa-video-camera text-primary sr-icons"></i>
+                    <h3>Badania termowizyjne</h3>
+                    <p class="text-muted">Wykonujemy badania termowizyjne budynków i mieszkań oraz urządzeń, maszyn i
+                        instalacji w zakładach przemysłowych i innych obiektach</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box" data-toggle="modal"
+                     data-target="#projektymodal">
+                    <i class="fa fa-4x fa-map-o text-primary sr-icons"></i>
+                    <h3>Projekty budowlane</h3>
+                    <p class="text-muted">Planujesz budowę domu? Szukasz odpowiedniego projektu? Skontaktuj się z nami!
+                        Wykonujemy indywidualne projekty architektoniczno-budowlane, zgodnie z wizją klienta i w oparciu
+                        o konsultację</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Nadzór inwestorski modal-->
+    <div class="modal fade" id="nadzormodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Nadzór inwestorski</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Uczestniczymy na każdym etapie prowadzonych prac budowlanych sprawdzając
+                        poprawność ich wykonanych względem projektu czy analizując problematykę samego projektu.
+                        Wyszukując newralgiczne punkty niwelujemy spowolnienie lub całkowite zatrzymanie budowy.
+                        <br><br>
+                        Nasze uczestnictwo w procesie budowlanym pozwala na:
+                    <ul>
+                        <li>zidentyfikowanie błędu i bieżącą pomoc techniczną w jego usunięciu bezpośrednio na
+                            budowie,
+                            zapobiegając tym samym potokowemu nawarstwianiu się problemu przy kolejnych pracach
+                            zanikowych
+                        </li>
+                        <br>
+                        <li>lepszy kontakt inwestora z generalnym wykonawcą którego prace są na bieżąco sprawdzane i
+                            poddawane szczegółowej analizie
+                        </li>
+                        <br>
+                        <li>zwiększenie wydajności budowy, a tym samym zmniejszenie kosztów samej inwestycji.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-xl js-scroll-trigger">Galeria
+                    </button>
+                    <button type="button" class="btn btn-primary btn-xl js-scroll-trigger" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Odbiory modal-->
+    <div class="modal fade" id="odbiorymodal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Odbiory mieszkań i domów</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Nasze odbiory wykonywane są w oparciu o obowiązujące normy budowlane z naciskiem na Polskie
+                        Normy.<br>
+                        <br>
+                        W trakcie odbiorów mieszkań i domów główny nacisk kładziemy na sprawdzenie:<br>
+                        <br>
+                    <ul>
+                        <li>poprawnych płaszczyzn ścian, sufitów i posadzek
+                        </li>
+                        <li>jakości tynków i jastrychów betonowych jak i innych posadzek</li>
+                        <li>właściwych kątów pomiędzy płaszczyznami zgodnie z przedstawioną dokumentacją budowlaną</li>
+                        <li>poprawnych wymiarów otworów drzwiowych i okiennych</li>
+                        <li>stolarki okiennej i drzwiowej włącznie z prawidłowym zakotwieniem i uszczelnieniem
+                            newralgicznych punktów
+                        </li>
+                        <li>rolet, żaluzji, markiz, mechanizmu regulacji i zakotwień</li>
+                        <li>instalacji elektrycznych</li>
+                        <li>instalacji sanitarnych, centralnego ogrzewania i gazowych</li>
+                        <li>poprawności wykonania balkonów, loggii, tarasów</li>
+                        <li>poprawności płaszczyzn elewacji, jakości jej wykonania i łączenia z newralgicznymi
+                            elementami
+                        </li>
+                        <li>w przypadku domów poprawności wykonania połaci dachowej, opierzeń i właściwego ich
+                            uszczelnienia
+                        </li>
+                        <li>kanałów spalinowych, wentylacyjnych</li>
+                        <li>obmiaru powykonawczego lokalu</li>
+                        <li>…</li>
+                    </ul>
+                    <br>
+                    Posiadamy profesjonalny sprzęt służący do właściwego odbioru m.in. niwelator, dalmierz,
+                    higrometr, kamera termowizyjna, normatywne poziomice i kątownice, anemometr, …
+                    <br>
+                    <br>
+                    Wykonujemy:
+                    <br>
+                    <ul>
+                        <li>odbiory techniczne (przed protokolarnym przekazaniem)</li>
+                        <li>odbiory końcowe (przy przekazaniu kluczy do obiektu)</li>
+                        <li>odbiory pousterkowe (po zgłoszeniu przez dewelopera/sprzedawce gotowości do ponownego
+                            odbioru)
+                        </li>
+                        <li>odbiory gwarancyjne (przed upływem okresu gwarancyjnego lokalu)</li>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                    Po odbiorze wykonujemy protokół z oględzin stanu technicznego z naniesionymi usterkami/błędami
+                    na rzut lokalu wraz z dokumentacją zdjęciową dołączoną do protokołu (dokumenty istotne przy
+                    dochodzeniu swoich praw przed deweloperem, ewentualnie sądem). Wykonane dokumenty przesyłamy na
+                    maila klienta lub dostarczamy w formie protokołu do klienta.<br>
+                    <br>
+                    Koszt odbioru zależny od metrażu lokalu/mieszkania/domu, preferencji klienta oraz jego oczekiwań
+                    względem dewelopera.
+                    Obszar działania województwo dolnośląskie, Wrocław i okolice.
+                    <br>
+                    Zapraszamy do kontaktu i darmowej konsultacji dotyczącej odbioru.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-xl js-scroll-trigger">Galeria
+                    </button>
+                    <button type="button" class="btn btn-primary btn-xl js-scroll-trigger" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Termowizja modal-->
+<div class="modal fade" id="termomodal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Badania termowizyjne</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <P>
+                    Zapraszamy do kontaktu i darmowej konsultacji dotyczącej termowizji
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-xl js-scroll-trigger">Galeria
+                </button>
+                <button type="button" class="btn btn-primary btn-xl js-scroll-trigger" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Projekty modal-->
+<div class="modal fade" id="projektymodal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Projekty budowlane</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <P>
+                    Zajmujemy się tworzeniem:
+                    <br>
+                <ul>
+                    <li>nowych projektów budynków</li>
+                    <li>adaptacji typowych projektów budowlanych</li>
+                    <li>projektów rozbudowy i zmiany sposobu użytkowania istniejących już budynków</li>
+                    <li>inwentaryzacji gotowych obiektów budowlanych</li>
+                    <li>projektów branżowych instalacji elektrycznych i sanitarnych</li>
+                </ul>
+                <br>
+                Do każdego zlecenia przygotowujemy:
+                <br>
+                <ul>
+                    <li>rzuty koncepcyjne wg. potrzeb klienta (3 wersje)</li>
+                    <li>wizualizacja 3d i elewacje w kolorze</li>
+                    <li>indywidualny projekt zagospodarowania terenu</li>
+                    <li>kompletny projekt architektoniczno-budowlany</li>
+                    <li>w razie potrzeby kompletne projekty branżowe instalacji elektrycznych oraz sanitarnych</li>
+                </ul>
+                <br>
+                Ceny projektów ustalane są indywidualnie, zależnie od wielkości i charakteru inwestycji.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-xl js-scroll-trigger">Galeria
+                </button>
+                <button type="button" class="btn btn-primary btn-xl js-scroll-trigger" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="p-0" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter popup-gallery">
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/nadzory/001NI.jpg">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Kategoria
+                            </div>
+                            <div class="project-name">
+                                Nadzory inwestorskie
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Kategoria
+                            </div>
+                            <div class="project-name">
+                                Odbiory mieszkań i domów
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Kategoria
+                            </div>
+                            <div class="project-name">
+                                Badania termowizyjne
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Kategoria
+                            </div>
+                            <div class="project-name">
+                                Projekty budowlane
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Kategoria
+                            </div>
+                            <div class="project-name">
+                                Ciekawostki z placów budów
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Kategoria
+                            </div>
+                            <div class="project-name">
+                                Offtopic
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="call-to-action bg-dark" id="guestbook">
+    <div class="container text-center">
+        <h2>Zobacz opinie naszych klientów!</h2>
+        <a class="btn btn-default btn-xl sr-button" href="">Księga gości</a>
+    </div>
+</div>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">Skontaktuj się z nami!</h2>
+                <hr class="primary">
+                <p>Chcesz rozpocząć współpracę? To świetnie! Zadzwoń lub wyślij wiadomość a już jutro możemy pracować
+                    dla Ciebie! </p>
+            </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x sr-contact"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-            </p>
-          </div>
+            <div class="col-lg-4 ml-auto text-center">
+                <i class="fa fa-phone fa-3x sr-contact"></i>
+                <p>+48 698 485 635</p>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                <p>
+                    <a href="mailto:fminzynieria@gmail.com">fminzynieria@gmail.com</a>
+                </p>
+            </div>
+            <div class="col-lg-4 mc-auto text-center">
+                <i class="fa fa-facebook-square fa-3x sr-contact"></i>
+                <div class="fb-follow" data-href="https://www.facebook.com/fminzynieria" data-layout="standard"
+                     data-size="large" data-show-faces="true"></div>
+                <div id="fb-root"></div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+<!--Footer-->
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">© 2017 - designed by FiLo </p>
+        <p class="navbar-text pull-right">® all rights reserved</p>
+    </div>
+</div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/popper/popper.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/creative.min.js"></script>
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
 
-  </body>
+<!--Facebook script-->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+</body>
 
 </html>
