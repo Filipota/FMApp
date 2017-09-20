@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" type="image/ico" href="img/favicon.ico">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FM inżynieria">
+    <meta name="author" content="Filip Lodej">
+
+    <title>Księga gości</title>
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FM inżynieria">
+        <meta name="author" content="Filip Lodej">
+
+        <title>FM inżynieria</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <!-- Custom fonts for this template -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+              rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+              rel='stylesheet' type='text/css'>
+
+        <!-- Plugin CSS -->
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/creative.min.css" rel="stylesheet">
+
+    </head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <center><img src="/img/logo.png" id="mainLogo" height="100" th:href="@{/}"/></center>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" th:href="@{/#about}" style="color:black;">O nas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" th:href="@{/#odbiory}" style="color:black;">Odbiory mieszkań i
+                        domów</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" th:href="@{/#services}" style="color:black;">Usługi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" th:href="@{/#portfolio}" style="color:black;">Galeria</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" th:href="@{/guestbook}" style="color:black;">Księga gości</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" th:href="@{/#contact}" style="color:black;">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Guest book-->
+<section>
+    <ul class="list-group" id="guestpost" style="max-width: 500px;overflow: auto;margin:0 auto; ">
+        <a href="#" class="list-group-item active">
+            Cras justo odio
+        </a>
+        <a class="list-group-item ">Porta ac consectetur ac</a>
+        <a class="list-group-item ">Dapibus ac facilisis in</a>
+        <a class="list-group-item ">Morbi leo risus</a>
+        <a class="list-group-item ">Vestibulum at eros</a>
+    </ul>
+</section>
+<section>
+    <table class="table table-responsive">
+        <tr>
+            <th>Id</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>Date Time</th>
+            <th>Email</th>
+        </tr>
+        <tr th:each="GuestPost: ${GuestPosts}">
+            <th th:text="${GuestPost.id}"></th>
+            <th th:text="${GuestPost.author}"></th>
+            <th th:text="${GuestPost.content}"></th>
+            <th th:text="${GuestPost.dateTime}"></th>
+            <th th:text="${GuestPost.email}"></th>
+        </tr>
+    </table>
+</section>
+
+
+<!--Contact-->
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">Skontaktuj się z nami!</h2>
+                <hr class="primary">
+                <p>Chcesz rozpocząć współpracę? To świetnie! Zadzwoń lub wyślij wiadomość a już jutro możemy pracować
+                    dla Ciebie! </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto text-center">
+                <i class="fa fa-phone fa-3x sr-contact"></i>
+                <p>+48 698 485 635</p>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                <p>
+                    <a href="mailto:fminzynieria@gmail.com">fminzynieria@gmail.com</a>
+                </p>
+            </div>
+            <div class="col-lg-4 mc-auto text-center">
+                <i class="fa fa-facebook-square fa-3x sr-contact"></i>
+                <div class="fb-follow" data-href="https://www.facebook.com/fminzynieria" data-layout="standard"
+                     data-size="large" data-show-faces="true"></div>
+                <div id="fb-root"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Footer-->
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">© 2017 - designed by FiLo </p>
+        <p class="navbar-text pull-right">® all rights reserved</p>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/popper/popper.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
+
+<!--Facebook script-->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+      rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+      rel='stylesheet' type='text/css'>
+
+<!-- Plugin CSS -->
+<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/creative.min.css" rel="stylesheet">
+</head>
+
+</html>

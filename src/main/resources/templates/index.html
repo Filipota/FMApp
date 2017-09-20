@@ -55,7 +55,7 @@
                     <a class="nav-link js-scroll-trigger" href="#portfolio">Galeria</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#guestbook">Księga gości</a>
+                    <a class="nav-link js-scroll-trigger" th:href="@{/guestbook}">Księga gości</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
@@ -75,7 +75,7 @@
                 współpracę z klientem indywidualnym w zakresie projektów, nadzorów inwestycji oraz odbiorów mieszkań i
                 domów. Zakres naszej działalności obejmuje województwa: dolnośląskie, śląskie i opolskie. Siedziba firmy
                 znajduję się we Wrocławiu. Zapraszamy do współpracy!</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Więcej o nas</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Więcej o nas</a>
         </div>
     </div>
 </header>
@@ -365,7 +365,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+                <a class="portfolio-box" href="img/portfolio/fullsize/nadzory/002NI.jpg">
                     <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
@@ -446,7 +446,7 @@
 <div class="call-to-action bg-dark" id="guestbook">
     <div class="container text-center">
         <h2>Zobacz opinie naszych klientów!</h2>
-        <a class="btn btn-default btn-xl sr-button" href="">Księga gości</a>
+        <a class="btn btn-default btn-xl sr-button" th:href="@{/guestbook}">Księga gości</a>
     </div>
 </div>
 

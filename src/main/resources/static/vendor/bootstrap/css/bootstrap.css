@@ -4313,7 +4313,7 @@ tbody.collapse.show {
 
 .list-group-item-action:active {
   color: #212529;
-  background-color: #e9ecef;
+
 }
 
 .list-group-item {
@@ -4348,8 +4348,8 @@ tbody.collapse.show {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #fd8d11;
+  border-color: #fd8d11;
 }
 
 .list-group-flush .list-group-item {
