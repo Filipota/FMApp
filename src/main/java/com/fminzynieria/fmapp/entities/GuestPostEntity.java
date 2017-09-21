@@ -1,8 +1,13 @@
 package com.fminzynieria.fmapp.entities;
 
+import org.springframework.data.jpa.repository.Temporal;
+
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "GUEST_BOOK")
@@ -16,8 +21,8 @@ public class GuestPostEntity {
     private String author;
     @Column(name = "content", length = 1000)
     private String content;
-    @Column(name = "datetime")
-    private LocalDateTime dateTime;
+    @Column(name = "datetime", columnDefinition="DATETIME")
+    private Date dateTime;
     @Column(name = "email")
     private String email;
     @Column(name = "showemail")
@@ -48,11 +53,11 @@ public class GuestPostEntity {
         this.content = content;
     }
 
-    public LocalDateTime getDateTime() {
+    public Date getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 

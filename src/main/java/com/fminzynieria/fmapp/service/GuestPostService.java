@@ -5,7 +5,10 @@ import com.fminzynieria.fmapp.repository.GuestPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class GuestPostService {
@@ -14,7 +17,7 @@ public class GuestPostService {
     public GuestPostRepository guestPostRepository;
 
 
-    public String addNewPost(String author, String content, LocalDateTime dateTime, String email, Boolean showMail) {
+    public String addNewPost(String author, String content, Date dateTime, String email, Boolean showMail) {
 
         GuestPostEntity guestPost = new GuestPostEntity();
         guestPost.setAuthor(author);

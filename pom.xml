@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>fmapp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>FMApp Project</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -51,6 +51,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-java8</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
 	</dependencies>
 
