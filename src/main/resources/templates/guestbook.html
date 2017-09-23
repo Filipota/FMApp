@@ -78,37 +78,47 @@
         </div>
     </div>
 </nav>
-<!--Guest book-->
-<section>
-    <ul class="list-group" id="guestpost" style="max-width: 500px;overflow: auto;margin:0 auto; ">
-        <a href="#" class="list-group-item active">
-            Cras justo odio
-        </a>
-        <a class="list-group-item ">Porta ac consectetur ac</a>
-        <a class="list-group-item ">Dapibus ac facilisis in</a>
-        <a class="list-group-item ">Morbi leo risus</a>
-        <a class="list-group-item ">Vestibulum at eros</a>
-    </ul>
-</section>
-<section>
-    <table class="table table-responsive">
-        <tr>
-            <th>Id</th>
-            <th>Author</th>
-            <th>Content</th>
-            <th>Date Time</th>
-            <th>Email</th>
-        </tr>
-        <tr th:each="GuestPost: ${GuestPosts}">
-            <th th:text="${GuestPost.id}"></th>
-            <th th:text="${GuestPost.author}"></th>
-            <th th:text="${GuestPost.content}"></th>
-            <th th:text="${GuestPost.dateTime}"></th>
-            <th th:text="${GuestPost.email}"></th>
-        </tr>
-    </table>
-</section>
 
+<!--Guest book posts lists-->
+<br>
+<br>
+<section>
+    <div class=".col-md-6 text-center">
+        <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-xl js-scroll-trigger center-block">
+            Dodaj swoją opinię!
+        </button>
+    </div>
+    <div class="container" th:each="GuestPost: ${GuestPosts}">
+        <div class="row">
+            <div class=".col-md-6">
+                <div class="row">
+                    <div class=".col-md-6">
+                        <!--author-->
+                        <h5><strong><a href="#" th:text="${GuestPost.author}"></a></strong></h5>
+                    </div>
+                </div>
+                <div class=".col-md-10">
+                    <!--content-->
+                    <p th:text="${GuestPost.content}"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class=".col-md-6">
+                    <p><i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                        <small>email:</small>
+                        <a th:href="${GuestPost.email}">
+                            <small th:text="${GuestPost.email}"></small>
+                        </a> |
+                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                        <small>napisano:</small>
+                        <small th:text="${GuestPost.dateTime}"></small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr class="primary">
+    </div>
+</section>
 
 <!--Contact-->
 
@@ -171,6 +181,7 @@
   js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.10";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
 
 
 
