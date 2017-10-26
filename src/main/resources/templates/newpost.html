@@ -9,7 +9,7 @@
     <meta name="description" content="FM inżynieria">
     <meta name="author" content="Filip Lodej">
 
-    <title>Księga gości</title>
+    <title>Dodaj opinię</title>
     <!DOCTYPE html>
     <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <link rel="icon" type="image/ico" href="img/favicon.ico">
@@ -79,42 +79,84 @@
     </div>
 </nav>
 
-<!--Guest book posts lists-->
-<br>
-<br>
-<section>
-    <div class=".col-md-6 text-center">
-        <a class="btn btn-primary btn-xl js-scroll-trigger" th:href="@{/newpost}">Dodaj opinię!</a>
-    </div>
-    <div class="container" th:each="GuestPost: ${GuestPosts}">
-        <div class="row">
-            <div class=".col-md-6">
+<!--Add post forms-->
+
+<section id="newpost">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <div class="container">
                 <div class="row">
-                    <div class=".col-md-6">
-                        <!--author-->
-                        <h5><strong><a href="#" th:text="${GuestPost.author}"></a></strong></h5>
-                    </div>
-                </div>
-                <div class=".col-md-6">
-                    <!--content-->
-                    <p style="word-break: break-all" th:text="${GuestPost.content}"></p>
-                </div>
-                <h2 style="height: 30px;"></h2>
-                <div class="row">
-                    <div class=".col-md-6">
-                        <p><i class="fa fa-envelope-open-o" aria-hidden="true"></i>
-                            <small>email:</small>
-                            <a th:href="${GuestPost.email}">
-                                <small th:text="${GuestPost.email}"></small>
-                            </a> |
-                            <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                            <small>napisano:</small>
-                            <small th:text="${GuestPost.dateTime}"></small>
-                        </p>
+                    <div class="col-lg-12 mx-auto text-center">
+                        <h2 style="height: 100px;"></h2>
+                        <h2 class="section-heading">Jesteś zadwolony ze skorzystania z
+                            naszych usług? </br>Zostaw opinię
+                            dla kolejnych klientów!</h2>
+                        <hr class="primary">
+                        <div class="col-md-12 mx-auto text-center">
+                            <form th:action="@{/newpost}" th:object="${guestPostForm}" method="POST"
+                                  class="form-horizontal">
+                                <!--Name form-->
+                                <div class="form-group">
+                                    <h6 align="left"><label for="form_author">Autor *:</label></h6>
+                                    <input id="form_author" type="text" th:field="*{author}" name="author"
+                                           class="form-control"
+                                           placeholder="Wprowadź nazwę autora*" required="required"
+                                           data-error="Autor jest wymagany." align="center">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <!--Email form-->
+                                <div class="form-group">
+                                    <h6 align="left"><label for="form_email">Adres e-mail: </label></h6>
+                                    <input id="form_email" type="email" th:field="*{email}" name="email"
+                                           class="form-control"
+                                           placeholder="Wprowadź swój adres email"
+                                           data-error="Wprowadź poprawny adres e-mail." align="center">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <!--Content form-->
+                                <div class="form-group">
+                                    <h6 align="left"><label for="form_message">Treść*: </label></h6>
+                                    <textarea id="form_message" th:field="*{content}" name="message"
+                                              class="form-control"
+                                              placeholder="Treść wiadomości *"
+                                              rows="4" required="required"
+                                              data-error="Proszę zostaw nam swoją wiadomość!"></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <!--Checkbox show email-->
+                                <div class="form-group row" align="left">
+                                    <label class="col-sm-12"></label>
+                                    <div class="col-sm-12">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" th:field="*{showEmail}">
+                                                <h6>Pokaż mój e-mail
+                                                    publicznie</h6>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Required fields-->
+                                <div class="row">
+                                    <div class="col-md-12" align="left">
+                                        <p class="text-muted"><strong>*</strong> Te pola są obowiązkowe</p>
+                                    </div>
+                                </div>
+                                <!--reCaptcha-->
+                                <div class="form-group">
+                                    <div class="g-recaptcha"
+                                         data-sitekey="6Ldt0jUUAAAAAAq3GyP30gSy1CE_AHiu_F7q6JRt"></div>
+                                </div>
+                                <div class=".col-md-6 text-center">
+                                    <input class="btn btn-primary btn-xl js-scroll-trigger" type="submit"
+                                           value="Dodaj opinię!"></input>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <hr class="primary">
         </div>
     </div>
 </section>
@@ -127,7 +169,8 @@
             <div class="col-lg-8 mx-auto text-center">
                 <h2 class="section-heading">Skontaktuj się z nami!</h2>
                 <hr class="primary">
-                <p>Chcesz rozpocząć współpracę? To świetnie! Zadzwoń lub wyślij wiadomość a już jutro możemy pracować
+                <p>Chcesz rozpocząć współpracę? To świetnie! Zadzwoń lub wyślij wiadomość a już
+                    jutro możemy pracować
                     dla Ciebie! </p>
             </div>
         </div>
@@ -144,7 +187,8 @@
             </div>
             <div class="col-lg-4 mc-auto text-center">
                 <i class="fa fa-facebook-square fa-3x sr-contact"></i>
-                <div class="fb-follow" data-href="https://www.facebook.com/fminzynieria" data-layout="standard"
+                <div class="fb-follow" data-href="https://www.facebook.com/fminzynieria"
+                     data-layout="standard"
                      data-size="large" data-show-faces="true"></div>
                 <div id="fb-root"></div>
             </div>
@@ -153,8 +197,9 @@
 </section>
 <!--Footer-->
 <div class="navbar navbar-default navbar-fixed-bottom">
+
     <div class="container">
-        <p class="navbar-text pull-left">© 2017 - designed by FiLo </p>
+        <p class="navbar-text pull-left">© 2017 - designed by FiLo</p>
         <p class="navbar-text pull-right">® all rights reserved</p>
     </div>
 </div>
@@ -171,6 +216,7 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/creative.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <!--Facebook script-->
 <script>(function(d, s, id) {
@@ -180,6 +226,53 @@
   js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.10";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

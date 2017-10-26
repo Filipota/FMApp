@@ -14,9 +14,8 @@ import java.util.Date;
 public class GuestPostEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(name = "author")
     private String author;
     @Column(name = "content", length = 1000)
@@ -29,11 +28,11 @@ public class GuestPostEntity {
     private boolean showEmail;
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
