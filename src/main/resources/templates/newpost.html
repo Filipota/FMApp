@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link rel="icon" type="image/ico" href="img/favicon.ico">
+
 
 <head>
 
@@ -93,7 +93,9 @@
                             dla kolejnych klientów!</h2>
                         <hr class="primary">
                         <div class="col-md-12 mx-auto text-center">
-                            <form th:action="@{/newpost}" th:object="${guestPostForm}" method="POST"
+                            <form id="newPostForm" onsubmit="javascript: return verifyCallback(responseCaptcha)"
+                                  method="POST"
+                                  th:object="${guestPostForm}"
                                   class="form-horizontal">
                                 <!--Name form-->
                                 <div class="form-group">
@@ -116,11 +118,11 @@
                                 <!--Content form-->
                                 <div class="form-group">
                                     <h6 align="left"><label for="form_message">Treść*: </label></h6>
-                                    <textarea id="form_message" th:field="*{content}" name="message"
+                                    <textarea maxlength="1000" minlength="5" required="required"
+                                              id="form_message" th:field="*{content}" name="message"
                                               class="form-control"
                                               placeholder="Treść wiadomości *"
-                                              rows="4" required="required"
-                                              data-error="Proszę zostaw nam swoją wiadomość!"></textarea>
+                                              rows="4" data-error="Proszę zostaw nam swoją wiadomość!"></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <!--Checkbox show email-->
@@ -143,17 +145,13 @@
                                     </div>
                                 </div>
                                 <!--reCaptcha-->
-                                <div class="form-group">
-                                    <div class="g-recaptcha"
-                                         data-sitekey="6Ldt0jUUAAAAAAq3GyP30gSy1CE_AHiu_F7q6JRt"></div>
-                                </div>
+                                <div id="recaptcha"></div>
                                 <div class=".col-md-6 text-center">
                                     <input class="btn btn-primary btn-xl js-scroll-trigger" type="submit"
-                                           value="Dodaj opinię!"></input>
+                                           value="Dodaj opinię!"/>
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -216,7 +214,6 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/creative.min.js"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <!--Facebook script-->
 <script>(function(d, s, id) {
@@ -227,65 +224,30 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
-
+<!--reCaptcha scripts-->
+<script type="text/javascript">
+      function verifyCallback(captcha) {
+      var response = grecaptcha.getResponse(captcha);
+        if(response!=""){
+        return true;
+        }
+        else{
+        alert("Prosimy o weryfikację Captcha");
+        return false;
+        }
+      };
+      var responseCaptcha;
+      var onloadCallback = function() {
+        responseCaptcha = grecaptcha.render('recaptcha', {
+          'sitekey' : '6Ldt0jUUAAAAAAq3GyP30gSy1CE_AHiu_F7q6JRt',
+           'theme' : 'light',
+        });
+      };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+</script>
 </body>
 
 </html>

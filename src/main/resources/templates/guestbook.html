@@ -99,17 +99,17 @@
                     <!--content-->
                     <p style="word-break: break-all" th:text="${GuestPost.content}"></p>
                 </div>
-                <h2 style="height: 30px;"></h2>
+                <h2 style="height: 15px;"></h2>
                 <div class="row">
                     <div class=".col-md-6">
                         <p><i class="fa fa-envelope-open-o" aria-hidden="true"></i>
                             <small>email:</small>
-                            <a th:href="${GuestPost.email}">
+                            <a th:if="${GuestPost.showEmail==true}" th:href="${GuestPost.email}">
                                 <small th:text="${GuestPost.email}"></small>
                             </a> |
                             <i class="fa fa-calendar-o" aria-hidden="true"></i>
                             <small>napisano:</small>
-                            <small th:text="${GuestPost.dateTime}"></small>
+                            <small th:text="${#dates.format(GuestPost.dateTime, 'dd-MM-yyyy | HH:mm')}"></small>
                         </p>
                     </div>
                 </div>
@@ -180,6 +180,8 @@
   js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.10";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+
 
 
 
