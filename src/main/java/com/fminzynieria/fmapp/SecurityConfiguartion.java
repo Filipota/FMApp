@@ -25,8 +25,12 @@ public class SecurityConfiguartion extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/login", "/guestbook", "/newpost").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
+                .antMatchers("/dropbox/**").hasAnyRole("USER", "ADMIN")
                 .and().formLogin().loginPage("/login")
                 .defaultSuccessUrl("/")
-                .and().logout().logoutSuccessUrl("/");
+                .and().csrf().disable()
+                .logout().logoutSuccessUrl("/")
+
+        ;
     }
 }

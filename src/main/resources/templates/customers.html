@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" type="image/ico" href="img/favicon.ico">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FM inżynieria">
+    <meta name="author" content="Filip Lodej">
+
+    <title>Logowanie</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FM inżynieria">
+        <meta name="author" content="Filip Lodej">
+
+        <title>FM inżynieria</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <!-- Custom fonts for this template -->
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+              rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+              rel='stylesheet' type='text/css'>
+
+        <!-- Plugin CSS -->
+        <link href="../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../css/creative.min.css" rel="stylesheet">
+
+    </head>
+<body>
+<!--Login form site-->
+<br>
+<br>
+<div class="container">
+    <br>
+    <div class="col-md-12">
+        <h4>Klienci obsługa plików</h4>
+        <div class="table-responsive">
+            <table id="mytable" class="table table-bordred table-striped">
+                <thead>
+
+                <th>Imię i nazwisko</th>
+
+                <th>Dodaj dokument</th>
+
+                <th>Dodaj zdjęcie</th>
+                </thead>
+                <tbody>
+                <tr th:each="folder : ${folders}">
+                    <td th:text="${folder}"></td>
+                    <td>
+                        <p data-placement="top" data-toggle="tooltip" title="Dodaj dokument">
+                            <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Dokument"
+                               th:href=@{/dropbox/customer/document/{name}(name=${folder})}>Dokument</a>
+                        </p>
+                    </td>
+                    <td>
+                        <p data-placement="top" data-toggle="tooltip" title="Dodaj zdjęcie">
+                            <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Zdjecie"
+                               th:href=@{/dropbox/customer/photo/{name}(name=${folder})}>Zdjęcie</a>
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--Footer-->
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">© 2017 - designed by FiLo </p>
+        <p class="navbar-text pull-right">® all rights reserved</p>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/popper/popper.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="../js/creative.min.js"></script>
+
+</body>
+
+</html>
+
+<!-- Bootstrap core CSS -->
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+      rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+      rel='stylesheet' type='text/css'>
+
+<!-- Plugin CSS -->
+<link href="../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="../css/creative.min.css" rel="stylesheet">

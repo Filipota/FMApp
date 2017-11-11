@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<link rel="icon" type="image/ico" href="../../../img/favicon.ico">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FM inżynieria">
+    <meta name="author" content="Filip Lodej">
+
+    <title>Dodaj plik</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FM inżynieria">
+        <meta name="author" content="Filip Lodej">
+
+        <title>FM inżynieria</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <!-- Custom fonts for this template -->
+        <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+              rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+              rel='stylesheet' type='text/css'>
+
+        <!-- Plugin CSS -->
+        <link href="../../../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../../../css/creative.min.css" rel="stylesheet">
+
+    </head>
+<body>
+<!--Upload fields-->
+<br>
+<br>
+<div class="container">
+    <div class="col-md-12 col-md-offset-2 text-center">
+        <h3>Dodaj plik do Dropboxa</h3>
+        <form method="POST" enctype="multipart/form-data" action="/dropbox/upload">
+            <input class="input-group input-text" type="text" name="filePath" th:value="${pathName}"/>
+            <div class="form-group">
+                <div class="input-group input-file" type="file" name="file">
+			<span class="input-group-btn">
+        		<button class="btn btn-secondary btn-choose" type="button">Wybierz</button>
+    		</span>
+                    <input type="text" class="form-control" placeholder='Wybierz plik...'/>
+                    <span class="input-group-btn">
+       			 <button class="btn btn-danger btn-reset" type="button">Zresetuj</button>
+    		</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-md">Zapisz</button>
+            </div>
+        </form>
+        <!--Footer-->
+        <div class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text pull-left">© 2017 - designed by FiLo </p>
+                <p class="navbar-text pull-right">® all rights reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript -->
+<script src="../../../vendor/jquery/jquery.min.js"></script>
+<script src="../../../vendor/popper/popper.min.js"></script>
+<script src="../../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../../../vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="../../../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="../../../js/creative.min.js"></script>
+<script>
+function bs_input_file() {
+	$(".input-file").before(
+		function() {
+			if ( ! $(this).prev().hasClass('input-ghost') ) {
+				var element = $("<input type='file' class='input-ghost' style='visibility:hidden; height:0'>");
+				element.attr("name",$(this).attr("name"));
+				element.change(function(){
+					element.next(element).find('input').val((element.val()).split('\\').pop());
+				});
+				$(this).find("button.btn-choose").click(function(){
+					element.click();
+				});
+				$(this).find("button.btn-reset").click(function(){
+					element.val(null);
+					$(this).parents(".input-file").find('input').val('');
+				});
+				$(this).find('input').css("cursor","pointer");
+				$(this).find('input').mousedown(function() {
+					$(this).parents('.input-file').prev().click();
+					return false;
+				});
+				return element;
+			}
+		}
+	);
+}
+$(function() {
+	bs_input_file();
+});
+
+
+
+</script>
+</body>
+
+</html>
+
+<!-- Bootstrap core CSS -->
+<link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="../../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+      rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+      rel='stylesheet' type='text/css'>
+
+<!-- Plugin CSS -->
+<link href="../../../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="../../../css/creative.min.css" rel="stylesheet">
+</head>
+
+</html>
