@@ -49,53 +49,64 @@
 <div class="container">
     <br>
     <div class="col-md-12">
-        <h4>Klienci obsługa plików</h4>
-        <div class="table-responsive">
-            <table id="mytable" class="table table-bordred table-striped">
-                <thead>
-
-                <th>Imię i nazwisko</th>
-
-                <th>Dodaj dokument</th>
-
-                <th>Dodaj zdjęcie</th>
-
-                <th>Przeglądaj dokumenty</th>
-
-                <th>Przeglądaj zdjęcia</th>
-                </thead>
-                <tbody>
-                <tr th:each="folder : ${folders}">
-                    <td th:text="${folder}"></td>
-                    <td>
-                        <p data-placement="top" data-toggle="tooltip" title="Dodaj dokument">
-                            <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Dokument"
-                               th:href=@{/dropbox/customer/document/{name}(name=${folder})}>Dod.dokument</a>
-                        </p>
-                    </td>
-                    <td>
-                        <p data-placement="top" data-toggle="tooltip" title="Dodaj zdjęcie">
-                            <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Zdjecie"
-                               th:href=@{/dropbox/customer/photo/{name}(name=${folder})}>Dod.zdjęcie</a>
-                        </p>
-                    </td>
-                    <td>
-                        <p data-placement="top" data-toggle="tooltip" title="Przeglądaj dokumenty">
-                            <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="path"
-                               th:href=@{/dropbox/customer/document/link/{path}(path=${folder})}>Przegl.dokumenty</a>
-                        </p>
-                    </td>
-                    <td>
-                        <p data-placement="top" data-toggle="tooltip" title="Przeglądaj zdjęcia">
-                            <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Zdjecie"
-                               th:href=@{/dropbox/customer/photo/link/{path}(path=${folder})}>Przegl.zdjęcia</a>
-                        </p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+        <h4>Klienci - obsługa plików</h4>
+        </br>
+        </br>
+        <div class="col-md-4">
+            <h6>Dodaj nowego klienta:</h6>
+            <form method="POST" enctype="multipart/form-data" action="/dropbox/customer/create">
+                <input placeholder="Imię i Nazwisko" class="input-group input-text" type="text" name="customerName" th:value="${pathName}"/>
+                </br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-md">Dodaj</button>
+                </div>
+            </form>
         </div>
+        <table id="mytable" class="table table-bordred table-striped">
+            <thead>
+
+            <th>Imię i nazwisko</th>
+
+            <th>Dodaj dokument</th>
+
+            <th>Dodaj zdjęcie</th>
+
+            <th>Przeglądaj dokumenty</th>
+
+            <th>Przeglądaj zdjęcia</th>
+            </thead>
+            <tbody>
+            <tr th:each="folder : ${folders}">
+                <td th:text="${folder}"></td>
+                <td>
+                    <p data-placement="top" data-toggle="tooltip" title="Dodaj dokument">
+                        <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Dokument"
+                           th:href=@{/dropbox/customer/document/{name}(name=${folder})}>Dod.dokument</a>
+                    </p>
+                </td>
+                <td>
+                    <p data-placement="top" data-toggle="tooltip" title="Dodaj zdjęcie">
+                        <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Zdjecie"
+                           th:href=@{/dropbox/customer/photo/{name}(name=${folder})}>Dod.zdjęcie</a>
+                    </p>
+                </td>
+                <td>
+                    <p data-placement="top" data-toggle="tooltip" title="Przeglądaj dokumenty">
+                        <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="path"
+                           th:href=@{/dropbox/customer/document/link/{path}(path=${folder})}>Przegl.dokumenty</a>
+                    </p>
+                </td>
+                <td>
+                    <p data-placement="top" data-toggle="tooltip" title="Przeglądaj zdjęcia">
+                        <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Zdjecie"
+                           th:href=@{/dropbox/customer/photo/link/{path}(path=${folder})}>Przegl.zdjęcia</a>
+                    </p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
+</div>
 </div>
 <!--Footer-->
 <div class="navbar navbar-default navbar-fixed-bottom">

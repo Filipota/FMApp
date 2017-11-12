@@ -72,4 +72,12 @@ public class DropboxController {
         String dropboxLink = dropboxService.getDropboxLink(realPath);
         return new ModelAndView("redirect:" + dropboxLink);
     }
+
+    @RequestMapping(value = "/customer/create", method = RequestMethod.POST)
+    public String createNewCustomer(Model model, @RequestParam String customerName) throws Exception {
+        String documentPath = "/" + customerName + "/Dokumenty";
+        String photosPath = "/" + customerName + "/Zdjęcia";
+        dropboxService.addCustomerFolder(documentPath, photosPath);
+        return "redirect:/dropbox/customers";
+    }
 }

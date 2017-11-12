@@ -58,5 +58,10 @@ public class DropboxService {
         CreateSharedLinkBuilder link = dbxClientV2.sharing().createSharedLinkBuilder(path);
         return link.start().getUrl();
     }
+
+    public void addCustomerFolder(String pathDocuments, String pathPhotos) throws Exception{
+        dbxClientV2.files().createFolderV2(pathDocuments);
+        dbxClientV2.files().createFolderV2(pathPhotos);
+    }
 }
 
