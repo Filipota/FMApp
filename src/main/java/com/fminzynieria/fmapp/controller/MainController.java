@@ -15,4 +15,9 @@ public class MainController {
     public String login() {
         return "login";
     }
+
+    @RequestMapping("/menu")
+    public String internalMenu() {
+        return "internalmenu";
+    }
 }
