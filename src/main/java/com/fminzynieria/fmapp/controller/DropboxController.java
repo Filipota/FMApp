@@ -1,17 +1,17 @@
 package com.fminzynieria.fmapp.controller;
 
 import com.dropbox.core.v2.DbxClientV2;
-import com.fminzynieria.fmapp.form.CustomerNameForm;
 import com.fminzynieria.fmapp.service.DropboxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.validation.Valid;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("dropbox")
@@ -53,8 +53,23 @@ public class DropboxController {
 
     @RequestMapping(value = "/customer/photo/{name}")
     public String addPhotoToCustomer(Model model, @PathVariable String name) throws Exception {
-        String filePath = "/" + name + "/Zdjecia";
+        String filePath = "/" + name + "/Zdjęcia";
         model.addAttribute("pathName", filePath);
         return "fileUpload";
+    }
+
+    @RequestMapping(value = "/customer/document/link/{path}", method = RequestMethod.GET)
+    public ModelAndView getDocumentsLink(Model model, @PathVariable String path) throws Exception {
+        String realPath = "/" + path + "/Dokumenty";
+        String dropboxLink = dropboxService.getDropboxLink(realPath);
+        return new ModelAndView("redirect:" + dropboxLink);
+
+    }
+
+    @RequestMapping(value = "/customer/photo/link/{path}", method = RequestMethod.GET)
+    public ModelAndView gethotosLink(Model model, @PathVariable String path) throws Exception {
+        String realPath = "/" + path + "/Zdjęcia";
+        String dropboxLink = dropboxService.getDropboxLink(realPath);
+        return new ModelAndView("redirect:" + dropboxLink);
     }
 }

@@ -59,6 +59,10 @@
                 <th>Dodaj dokument</th>
 
                 <th>Dodaj zdjęcie</th>
+
+                <th>Przeglądaj dokumenty</th>
+
+                <th>Przeglądaj zdjęcia</th>
                 </thead>
                 <tbody>
                 <tr th:each="folder : ${folders}">
@@ -66,13 +70,25 @@
                     <td>
                         <p data-placement="top" data-toggle="tooltip" title="Dodaj dokument">
                             <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Dokument"
-                               th:href=@{/dropbox/customer/document/{name}(name=${folder})}>Dokument</a>
+                               th:href=@{/dropbox/customer/document/{name}(name=${folder})}>Dod.dokument</a>
                         </p>
                     </td>
                     <td>
                         <p data-placement="top" data-toggle="tooltip" title="Dodaj zdjęcie">
                             <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Zdjecie"
-                               th:href=@{/dropbox/customer/photo/{name}(name=${folder})}>Zdjęcie</a>
+                               th:href=@{/dropbox/customer/photo/{name}(name=${folder})}>Dod.zdjęcie</a>
+                        </p>
+                    </td>
+                    <td>
+                        <p data-placement="top" data-toggle="tooltip" title="Przeglądaj dokumenty">
+                            <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="path"
+                               th:href=@{/dropbox/customer/document/link/{path}(path=${folder})}>Przegl.dokumenty</a>
+                        </p>
+                    </td>
+                    <td>
+                        <p data-placement="top" data-toggle="tooltip" title="Przeglądaj zdjęcia">
+                            <a class="btn btn-secondary btn-xs js-scroll-trigger" data-title="Zdjecie"
+                               th:href=@{/dropbox/customer/photo/link/{path}(path=${folder})}>Przegl.zdjęcia</a>
                         </p>
                     </td>
                 </tr>
